@@ -1,7 +1,6 @@
 <template>
   <div>
     <el-button type="primary">主要按钮</el-button>
-    <canvas id="canvas" :width="width" :height="height"></canvas>
   </div>
 </template>
 

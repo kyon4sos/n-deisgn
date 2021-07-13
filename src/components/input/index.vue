@@ -43,7 +43,7 @@ export default {
   mounted() {},
   computed: {
     clear() {
-      return this.text.length > 0;
+      return this.text.length > 0 && this.toggle;
     },
   },
   methods: {
@@ -62,23 +62,27 @@ export default {
 .input-wrap {
   cursor: pointer;
   height: 40px;
-  margin-right: 16px;
+  line-height: 40px;
+  margin-right: 8px;
   position: relative;
+  padding: 0 14px;
   .input {
     border: none;
     outline: none;
     width: 0px;
     height: 100%;
-    padding-left: 22px;
-    color: #494949;
+    color: #dbdbdb;
+    opacity: 0;
     background-color: transparent;
     transition: all 0.4s ease-in-out;
   }
-
   .icon {
     position: absolute;
     top: 12px;
-    left: 0;
+    left: 8px;
+  }
+  .icon:nth-child(2) {
+    display: none;
   }
   .suffix {
     display: none;
@@ -88,15 +92,16 @@ export default {
     display: block;
   }
 }
+
 .toggle {
   border-bottom: 1px #494949 solid;
-}
-.toggle {
   .icon {
     color: #fff;
   }
   .input {
     width: 160px;
+    padding-left: 20px;
+    opacity: 1;
   }
 }
 </style>

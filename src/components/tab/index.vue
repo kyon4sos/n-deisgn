@@ -61,8 +61,8 @@ export default {
 .tab {
   display: flex;
   flex-direction: column;
+  line-height: 40px;
   .tab-item {
-    padding: 16px 0px;
     cursor: pointer;
     color: var(--secondaryColor);
     margin-right: 16px;

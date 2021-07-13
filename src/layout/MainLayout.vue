@@ -1,7 +1,7 @@
 <template>
   <el-container>
     <el-aside width="200px">
-      <div>
+      <div class="top">
         <div class="logo">neko</div>
         <n-menu></n-menu>
       </div>
@@ -65,7 +65,7 @@ export default {
   },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .logo {
   color: #fff;
   font-weight: 700;
@@ -91,22 +91,17 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 0;
+  padding: 0 20px;
+  background: var(--headerBgColor);
+  border-bottom-color: var(--border-color);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
 .user-info {
   display: flex;
   align-items: center;
 }
-.btn {
-  line-height: 32px;
-  background-color: #d55f64;
-  padding: 0 16px;
-  border-radius: 32px;
-  color: #fff;
-  margin-right: 32px;
-  user-select: none;
-  cursor: pointer;
-}
+
 .el-icon-message-solid {
   margin-right: 8px;
 }
@@ -115,11 +110,24 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  background: var(--sideBgColor);
+  border-right-color: var(--border-color);
+  border-right-width: 1px;
+  border-right-style: solid;
+  .top {
+    flex: 1 1 auto;
+    background: var(--sideBgColor);
+    .logo {
+      text-align: center;
+      background: var(--sideBgColor);
+    }
+  }
 }
 .el-main {
   .main-header {
     display: flex;
   }
+  background: var(--mainBgColor);
 }
 .btn-large {
   width: 240px;

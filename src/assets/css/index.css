@@ -31,8 +31,24 @@ html {
   --border-color: #131418;
   --mainColor: #3d4251;
   --tooltipColor: #131418;
+  --headerBgColor:#3d4251;
+  --sideBgColor:#2e3139;
+  --canvasBgColor:#3d4251;
+  --mainBgColor:#3d4251;
 }
-
+.btn {
+  line-height: 32px;
+  background-color: #d55f64;
+  padding: 0 16px;
+  border-radius: 32px;
+  color: #fff;
+  margin-right: 32px;
+  user-select: none;
+  cursor: pointer;
+}
+.el-menu {
+  border-right: none;
+}
 .el-button {
   background-color: transparent;
   border: none;
@@ -45,7 +61,7 @@ html {
   transition: all 0.4s ease-in-out;
 }
 .color-grey {
-  color: #494949;
+  color: #e0e0e0;
   transition: all 0.4s ease-in-out;
 }
 .hover_color-wh-1:hover {
