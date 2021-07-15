@@ -66,16 +66,18 @@ export default {
 
 <style lang="scss">
 .management__wrap {
+  color: var(--fontColor);
   .header {
     padding: 8px 8px;
     height: 34px;
   }
   .page-item {
+    color: #fff;
     padding: 6px;
   }
   .page-item.active {
     background-color: var(--primaryColor);
-    transition: all 0.4s ease-in-out;
+    // transition: all 0.2s linear;
     .icon {
       visibility: visible;
     }

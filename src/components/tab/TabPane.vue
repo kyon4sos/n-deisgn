@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'tab-pane',
   props: {
     name: {
       default: '',

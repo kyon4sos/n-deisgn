@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import { fabric } from 'fabric';
 export default {
   name: 'Home',
   data() {
@@ -15,17 +14,6 @@ export default {
       component: [],
     };
   },
-  mounted() {
-    var canvas = new fabric.Canvas('canvas');
-    // var rect = new fabric.Rect({
-    //   top: 100,
-    //   left: 100,
-    //   width: 60,
-    //   height: 70,
-    //   fill: "red",
-    // });
-    const t = new fabric.Text('hello world', { left: 100, top: 100 });
-    canvas.add(t);
-  },
+  mounted() {},
 };
 </script>

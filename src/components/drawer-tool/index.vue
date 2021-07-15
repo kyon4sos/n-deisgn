@@ -1,19 +1,13 @@
 <template>
   <div class="flex flex-col justify-between h-full py-2">
-    <div class="flex flex-col content-center justify-center px-1 gap-y-2">
-      <!-- <n-button icon="iconfont icon-rectangle"></n-button>
-      <n-button icon="iconfont icon-duobianxing"></n-button>
-      <n-button icon="iconfont icon-yuan"></n-button>
-      <n-button icon="iconfont icon-bofangsanjiaoxing"></n-button>
-      <n-button icon="iconfont icon-Line"></n-button>
-      <n-button icon="iconfont icon-KnifeOutline"></n-button>
-      <n-button icon="iconfont icon-pic"></n-button> -->
+    <div class="flex flex-col content-center justify-center px-2 gap-y-2">
       <n-button
+        :key="idx"
         v-for="(b, idx) in tools"
         :icon="`iconfont ${b.icon}`"
-        :key="idx"
+        :class="current == b.type ? 'active' : ''"
+        @click="onClick(b.type, idx)"
         v-tooltip.right="{ content: b.tooltip, classes: ['tooltip'] }"
-        @click="$emit('my-draw', b.type)"
       ></n-button>
     </div>
     <div class="flex flex-col content-center justify-center px-1">
@@ -35,8 +29,15 @@
 
 <script>
 export default {
+  props: {
+    active: {
+      type: String,
+      default: 'none',
+    },
+  },
   data() {
     return {
+      current: this.active,
       tools: [
         {
           icon: 'icon-rectangle',
@@ -55,6 +56,11 @@ export default {
         },
         {
           icon: 'icon-bofangsanjiaoxing',
+          type: 'triangle',
+          tooltip: '三角形',
+        },
+        {
+          icon: 'icon-star',
           type: 'star',
           tooltip: '星星',
         },
@@ -62,6 +68,11 @@ export default {
           icon: 'icon-Line',
           type: 'line',
           tooltip: '直线',
+        },
+        {
+          icon: 'icon-t',
+          type: 'text',
+          tooltip: '文本',
         },
         {
           icon: 'icon-KnifeOutline',
@@ -73,10 +84,36 @@ export default {
           type: 'pic',
           tooltip: '图片',
         },
+        {
+          icon: 'icon-kongbaiye',
+          type: 'board',
+          tooltip: '画板',
+        },
       ],
     };
+  },
+  mounted() {
+    window.addEventListener('click', (e) => {
+      console.log('click', e);
+    });
+  },
+
+  watch: {
+    active(a) {
+      this.current = a;
+    },
+  },
+  methods: {
+    onClick(type) {
+      this.$emit('my-draw', type);
+      this.current = type;
+    },
   },
 };
 </script>
 
-<style></style>
+<style>
+.active {
+  color: var(--primaryColor);
+}
+</style>

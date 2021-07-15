@@ -1,6 +1,6 @@
 <template>
   <div
-    class="input-wrap"
+    class="input-search__wrap"
     v-clickOutside="onClose"
     :class="{ toggle }"
     @click="onClick($event)"
@@ -59,12 +59,13 @@ export default {
 </script>
 
 <style lang="scss">
-.input-wrap {
+.input-search__wrap {
   cursor: pointer;
-  height: 40px;
-  line-height: 40px;
+  height: 100%;
   margin-right: 8px;
   position: relative;
+  display: flex;
+  align-items: center;
   padding: 0 14px;
   .input {
     border: none;
@@ -78,7 +79,6 @@ export default {
   }
   .icon {
     position: absolute;
-    top: 12px;
     left: 8px;
   }
   .icon:nth-child(2) {

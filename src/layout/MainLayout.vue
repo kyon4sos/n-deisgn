@@ -1,54 +1,57 @@
 <template>
-  <el-container>
-    <el-aside width="200px">
-      <div class="top">
-        <div class="logo">neko</div>
-        <n-menu></n-menu>
-      </div>
-      <div class="assets">
-        <span><i class="el-icon-present"></i>资源</span>
-        <span> 进入<i class="el-icon-arrow-right"></i></span>
-      </div>
-    </el-aside>
+  <div class="main-layout">
     <el-container>
-      <el-header>
-        <el-button icon="el-icon-plus"></el-button>
-        <div class="user-info">
-          <div class="btn"><i class="el-icon-message-solid"></i>最新功能</div>
-          <el-avatar :size="36" :src="circleUrl"></el-avatar>
+      <el-aside width="200px">
+        <div class="top">
+          <div class="logo">neko</div>
+          <n-menu></n-menu>
         </div>
-      </el-header>
-      <el-main>
-        <div class="main-header">
-          <NSearchInput
-            placeholder="请输入文件名"
-            @enter="onEnter"
-          ></NSearchInput>
-          <n-tab :tabs="tabs">
-            <tab-pane label="全部文件" name="all">
-              <div class="btn-large new-file">
-                <i class="el-icon-plus"></i>
-                <span>创建新文件</span>
-              </div>
-            </tab-pane>
-            <tab-pane label="我创建的" name="my"><h1>你好2</h1></tab-pane>
-            <tab-pane label="共享给我的" name="share"
-              ><el-empty description="暂无数据"></el-empty
-            ></tab-pane>
-          </n-tab>
+        <div class="assets">
+          <span><i class="el-icon-present"></i>资源</span>
+          <span> 进入<i class="el-icon-arrow-right"></i></span>
         </div>
-      </el-main>
+      </el-aside>
+      <el-container>
+        <el-header>
+          <el-button icon="el-icon-plus"></el-button>
+          <div class="user-info">
+            <div class="btn"><i class="el-icon-message-solid"></i>最新功能</div>
+            <el-avatar :size="36" :src="circleUrl"></el-avatar>
+          </div>
+        </el-header>
+        <el-main>
+          <div class="main-header">
+            <n-tab :tabs="tabs">
+              <template #search>
+                <NSearchInput
+                  placeholder="请输入文件名"
+                  @enter="onEnter"
+                ></NSearchInput
+              ></template>
+              <tab-pane label="全部文件" name="all">
+                <div class="btn-large new-file">
+                  <i class="el-icon-plus"></i>
+                  <span>创建新文件</span>
+                </div>
+              </tab-pane>
+              <tab-pane label="我创建的" name="my"><h1>你好2</h1></tab-pane>
+              <tab-pane label="共享给我的" name="share"
+                ><el-empty description="暂无数据"></el-empty
+              ></tab-pane>
+            </n-tab>
+          </div>
+        </el-main>
+      </el-container>
     </el-container>
-  </el-container>
+  </div>
 </template>
 <script>
 import NMenu from '@/components/menu';
 import NSearchInput from '@/components/input';
-import NTab from '@/components/tab';
-import TabPane from '../components/tab/TabPane.vue';
+
 export default {
   name: 'MainLayout',
-  components: { NMenu, NSearchInput, NTab, TabPane },
+  components: { NMenu, NSearchInput },
   data() {
     return {
       tabs: ['全部文件', '我创建的', '共享给我的'],
@@ -127,7 +130,7 @@ export default {
   .main-header {
     display: flex;
   }
-  background: var(--mainBgColor);
+  background: var(--bgColor);
 }
 .btn-large {
   width: 240px;
@@ -146,6 +149,15 @@ export default {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 24px;
+  }
+}
+.main-layout {
+  .el-button {
+    background-color: transparent;
+    border: none;
+  }
+  .el-button:hover {
+    background-color: #1a1617;
   }
 }
 </style>

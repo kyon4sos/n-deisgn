@@ -7,7 +7,6 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    redirect: '/workspace',
     component: MainLayout,
     children: [
       {
@@ -21,6 +20,11 @@ const routes = [
     name: 'Workspace',
     component: () =>
       import(/* webpackChunkName: "WorkSpace" */ '@/views/WorkSpace'),
+  },
+  {
+    path: '/dev',
+    name: 'Dev',
+    component: () => import(/* webpackChunkName: "WorkSpace" */ '@/views/Dev'),
   },
 ];
 

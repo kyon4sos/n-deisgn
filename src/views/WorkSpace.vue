@@ -1,7 +1,7 @@
 <template>
   <div class="workspace">
     <el-container>
-      <el-header class="color-grey-1" height="44px">
+      <el-header height="44px">
         <header-nav></header-nav>
       </el-header>
       <el-main>
@@ -16,8 +16,6 @@ import HeaderNav from '@/components/header-nav';
 import Drawer from '@/components/drawer';
 export default {
   components: {
-    // NSider,
-    // DrawerTool,
     Drawer,
     HeaderNav,
   },
@@ -26,6 +24,7 @@ export default {
 
 <style lang="scss">
 .workspace {
+  width: 100%;
   .el-main {
     display: flex;
     flex-direction: row;

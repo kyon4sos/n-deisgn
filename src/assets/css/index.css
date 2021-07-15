@@ -7,7 +7,6 @@
   margin: 0;
   box-sizing: border-box;
   font-size: 12px;
-  color: #ffffffcc;
 }
 
 body,
@@ -25,16 +24,22 @@ html {
     auto !important;
 }
 :root {
-  --bgColor: green;
   --primaryColor: #d55f64;
   --secondaryColor: #8d8d8d;
   --border-color: #131418;
-  --mainColor: #3d4251;
   --tooltipColor: #131418;
-  --headerBgColor:#3d4251;
-  --sideBgColor:#2e3139;
-  --canvasBgColor:#3d4251;
-  --mainBgColor:#3d4251;
+  --headerBgColor: #3d4251;
+  --sideBgColor: #2e3139;
+  --canvasBgColor: #3d4251;
+  --bgColor: #3d4251;
+  --fontColor: #fff;
+  --indDelytaX: '0px';
+}
+#app {
+  width: 100%;
+}
+.header-bg-color {
+  background: var(--headerBgColor);
 }
 .btn {
   line-height: 32px;
@@ -49,13 +54,13 @@ html {
 .el-menu {
   border-right: none;
 }
-.el-button {
+/* .el-button {
   background-color: transparent;
   border: none;
 }
 .el-button:hover {
   background-color: #1a1617;
-}
+} */
 .color-grey-1 {
   color: #8d8d8d;
   transition: all 0.4s ease-in-out;
@@ -86,7 +91,7 @@ html {
   border-top: 1px solid var(--border-color);
 }
 .main-color {
-  background-color: var(--mainColor);
+  background-color: var(--bgColor);
 }
 
 .tooltip {
