@@ -8,7 +8,7 @@
     active-text-color="#d55f64"
     router="true"
   >
-    <el-menu-item index="2">
+    <el-menu-item index="/dev">
       <i class="el-icon-menu"></i>
       <span slot="title">最近</span>
     </el-menu-item>

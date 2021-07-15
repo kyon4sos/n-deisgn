@@ -253,7 +253,7 @@ export default {
   justify-content: center;
 
   h1 {
-    margin-top: 20px;
+    margin: 20px 0;
     color: #fff;
     font-size: 24px;
   }
